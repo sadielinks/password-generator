@@ -16,16 +16,16 @@ var specRight;
 function userInput() {
   var passLength = prompt("Choose a password length of at least 8 characters and no more than 128 characters");
     if (passLength < 8 || passLength > 128 ){
-    alert("I'm gonna need something between 8-128 characters :)");
+    alert("I'm gonna need something between 8-128 characters :) Click the generate button when you decide... ya silly bear");
     return;
   }
   // These are the actual choices the user has to pick from. If they don't pick anything they and will be prompted for their silliness
-  var useLowerCase = confirm('Use LowerCase?');
-  var useUpperCase = confirm('Use Uppers?');
-  var useSpecials = confirm('Use Specials?');
-  var useNumbahs = confirm('Use Numbers?');
+  var useLowerCase = confirm('Use lowercase letters? If not, select cancel.');
+  var useUpperCase = confirm('Use UPPERCASE letters? If not, select cancel.');
+  var useSpecials = confirm('Use special (!@#$%^&*+) characters? If not, select cancel.');
+  var useNumbahs = confirm('Use Numbers? (0-9) If not, select cancel.');
   if (!useLowerCase && !useUpperCase && !useSpecials && !useNumbahs) {
-   alert("Well you have to pick something ಠ.ಠ");
+   alert("Well you have to pick something ಠ_ಠ");
    return;
   }
   // Choices selected become choices vthat will be valid
@@ -47,11 +47,28 @@ function generatePassword() {
 var passResult = [];
 var passAllTypes = [];
 var guaranteedTypes = [];
+
 if (userData.useLowerCase){
-  //.concat .push .getRandom
+  // .concat .push .getRandom
 passAllTypes = passAllTypes.concat(alphLowerChars);
 guaranteedTypes.push(getRandom(alphLowerChars));
 }
+
+if (userData.useUpperCase){
+passAllTypes = passAllTypes.concat(alphUpperChars);
+guaranteedTypes.push(getRandom(alphUpperChars));
+}
+
+if (userData.useSpecials){
+passAllTypes = passAllTypes.concat(specChars);
+guaranteedTypes.push(getRandom(specChars));
+}
+
+if (userData.useNumbahs){
+passAllTypes = passAllTypes.concat(numsChars);
+guaranteedTypes.push(getRandom(numsChars));
+}
+
 }
 
 // function getRandom(){
