@@ -4,7 +4,7 @@ var alphetChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var numberChars = "123456789"
 var specialChars = "!@#$%^&*+"
 var length;
-
+var 
 
 // Write password to the #password input
 // Ok here's what we need:
@@ -13,6 +13,8 @@ var length;
 // lowercase?
 // numeric?
 // special characters?
+
+
 
 function writePassword() {
   var password = generatePassword();
