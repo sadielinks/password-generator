@@ -17,41 +17,63 @@ var specRight;
 // numeric?
 // special characters?
 
-userInput();
+// userInput();
 
 function userInput() {
   var passLength = prompt("Choose a password length of at least 8 characters and no more than 128 characters");
     if (passLength < 8 || passLength > 128 ){
     alert("I'm gonna need something between 8-128 characters :)");
-}
-var useLowerCase = confirm('Use LowerCase?');
-var useUpperCase = confirm('Use Uppers?');
-var useSpecials = confirm('Use Specials?');
-var useNumbahs = confirm('Use Numbers?');
+    return;
+  }
+  var useLowerCase = confirm('Use LowerCase?');
+  var useUpperCase = confirm('Use Uppers?');
+  var useSpecials = confirm('Use Specials?');
+  var useNumbahs = confirm('Use Numbers?');
+  if (!useLowerCase && !useUpperCase && !useSpecials && !useNumbahs) {
+   alert("Well you have to pick something");
+   return;
+  }
+  var passChoices = {
+    passLength: passLength,
+    useLowerCase: useLowerCase,
+    useUpperCase: useUpperCase,
+    useSpecials: useSpecials,
+    useNumbahs: useNumbahs
+  }
+  return passChoices;
 
 }
 
+// Starting the actual output
 function generatePassword() {
-
+ var userData = userInput();
+var passResult = [];
+var passAllTypes = [];
+var guaranteedTypes = [];
+if (userData.useLowerCase){
+  //.concat .push .getRandom
+passAllTypes = passAllTypes.concat(alphLowerChars);
+guaranteedTypes.push(getRandom(alphLowerChars));
+}
 }
 
+// function getRandom(){
+
+//   //LOOK INTO Math.floor(Math.Random)
+// }
+
+// //forloop using your passLength
+
+// }
 
 
-
-
-
-//---------- given code from hw
+//---------- given code - hw
 function writePassword() {
   var passwordLength = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 
-
-// remember: each one:
-// Alerts when they mess up -_-
-// Plz enter how many/what digits 
-// Plz answer yes or no
 
 
 // Add event listener to generate button -hw
