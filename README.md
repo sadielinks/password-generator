@@ -17,7 +17,12 @@ using a clean appearance.
 
 # Screenshot
 
-![Screenshot](screenshotpathway)
+Before:
+![Screenshot](assets/images/screenshot.png)
+
+After:
+![Screenshot](assets/images/screenshot.png)
+
 
 # Links
 
