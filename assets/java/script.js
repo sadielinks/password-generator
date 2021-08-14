@@ -73,9 +73,11 @@ guaranteedTypes.push(getRandom(numsChars));
 }
 }
 
-// function getRandom() {
-// Math.floor(Math.Random)
-// }
+function getRandom() {
+  Math.floor(Math.Random).toString().slice()
+}
+
+
 
 // var index = Math.floor(Math.random() * passChoices);
 // var userData = passChoices[index];
@@ -85,9 +87,10 @@ guaranteedTypes.push(getRandom(numsChars));
 // }
 
 
-//---------- given code - hw
+// given code - hw
+// This area allows for the code to show up in the 'box' by linking html id = 'password'
 function writePassword() {
-  var passwordLength = generatePassword();
+  var passLength = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
