@@ -1,8 +1,8 @@
-## Password Generator (Bootcamp Assignment 3 - Javascript)
+# Password Generator (Bootcamp Assignment 3 - Javascript)
 
 By Sadie Sial
 
-# User Story
+## User Story
 
 ```
 AS AN employee with access to sensitive data
@@ -15,7 +15,7 @@ This application allows for the user to generate a case sensitive password
 using a clean appearance.
 ```
 
-# Screenshot
+## Screenshot
 
 Before:
 ![Screenshot](assets/images/screenshot.png)
@@ -24,7 +24,7 @@ After:
 ![Screenshot](assets/images/screenshot.png)
 
 
-# Links
+## Links
 
 [Deployed App](githubpages)
 

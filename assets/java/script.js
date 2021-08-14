@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var displayedPass = document.querySelector('#password')
 var numsChars = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var alphLowerChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var alphUpperChars = ['A' , 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -54,6 +55,7 @@ var guaranteedTypes = [];
 
 if (userData.useLowerCase){
   // .concat .push (getRandom)
+  // delete the console.logs before
 passAllTypes = passAllTypes.concat(alphLowerChars);
 guaranteedTypes.push(getRandom(alphLowerChars));
 console.log('passAllTypes', passAllTypes)
@@ -80,8 +82,11 @@ guaranteedTypes.push(getRandom(numsChars));
 console.log('passAllTypes', passAllTypes)
 console.log('guaranteedTypes', guaranteedTypes)
 }
+console.log(guaranteedTypes) 
+// for loop needs to check userData length to know the # of characters then need to place the for loop in this very function
+// need to a placeholder variable is going to = another getRandom of passAllTypes. Pass to passResult array
+// can CLog var placeholder inside loop
 }
-
 
 // this is from the video bcs sent earlier (and I understand the math.floor and math.random definitions, just not how to use them with arrays)
 // need to return back to where functions are being called
@@ -91,12 +96,12 @@ var randElement = someArray[randIndex]
 return randElement
 }
 
-//getrandomchar types from somearry (however many times) 
+//getrandomchar types from somearry (however many time user chose) 
 // forloop using your passLength
 
-for (let i = 0; i < someArray.length; i++){
+// for (let i = 0; i < someArray.length; i++){
   
-}
+// }
   
 
 
