@@ -89,24 +89,20 @@ console.log(guaranteedTypes)
 // need to a placeholder variable is going to = another getRandom of passAllTypes. Pass to passResult array
 // can CLog var placeholder inside loop
 
-function generatePassword() {
-  let password = "";
-  for (let i =0; i < passLength; i++){
-  getRandom = Math.floo(Math.random() *passAllTypes.length)
-  password = password + passAllTypes[getRandom]
-  } 
-  return passsword;
-  }
-  console.log(password)
-}
+let password = "";
+let character = "";
+for (let i =0; i < passLength; i++){
+character = getRandom(passAllTypes)
+password = password + character
+} 
 
 // need to return back to where functions are being called
 //bcs tutor said someArray is a placeholder here and only used here to make the 'math' happen, it is not defined anywhere else
-// function getRandom(someArray) {
-// var randIndex = Math.floor(Math.random() * someArray.length);
-// var randElement = someArray[randIndex]
-// return randElement
-// }
+function getRandom(someArray) {
+var randIndex = Math.floor(Math.random() * someArray.length);
+var randElement = someArray[randIndex]
+return randElement
+}
 
 //getrandomchar types from somearry (however many time user chose) 
 // forloop using your passLength
@@ -114,11 +110,12 @@ function generatePassword() {
 // This area allows for the code to show up in the 'box' by linking html id = 'password'
 function writePassword() {
   var passLength = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
+  var password = document.querySelector("#password");
+  password.value = password;
 }
 
 
 
 // Add event listener to generate button -hw
-generateBtn.addEventListener("click", writePassword);//}
+generateBtn.addEventListener("click", writePassword);
+}
