@@ -8,6 +8,9 @@ var passLength;
 var numsRight;
 var alphRight;
 var specRight;
+var generatePassword;
+var getRandom;
+var passChoices;
 
 
 // userInput();--------------------
@@ -15,7 +18,7 @@ var specRight;
 // User will be asked the following prompts/alerts in order to start generating a password
 function userInput() {
   var passLength = prompt("Choose a password length of at least 8 characters and no more than 128 characters");
-    if (passLength < 8 || passLength > 128 ){
+    if (passLength < 8 || passLength > 128){
     alert("I'm gonna need something between 8-128 characters :) Click the generate button when you decide... ya silly bear");
     return;
   }
@@ -28,7 +31,7 @@ function userInput() {
    alert("Well you have to pick something ಠ_ಠ");
    return;
   }
-  // Choices selected become choices vthat will be valid
+  // Choices selected become choices that will be valid
   var passChoices = {
     passLength: passLength,
     useLowerCase: useLowerCase,
@@ -41,9 +44,9 @@ function userInput() {
 }
 
 // Starting the actual output
-
+// passResult(); ???
 function generatePassword() {
- var userData = userInput();
+var userData = userInput();
 var passResult = [];
 var passAllTypes = [];
 var guaranteedTypes = [];
@@ -68,15 +71,16 @@ if (userData.useNumbahs){
 passAllTypes = passAllTypes.concat(numsChars);
 guaranteedTypes.push(getRandom(numsChars));
 }
-
 }
 
-// function getRandom(){
-
-//   //LOOK INTO Math.floor(Math.Random)
+// function getRandom() {
+// Math.floor(Math.Random)
 // }
 
-// //forloop using your passLength
+// var index = Math.floor(Math.random() * passChoices);
+// var userData = passChoices[index];
+
+  // //forloop using your passLength
 
 // }
 
@@ -91,4 +95,4 @@ function writePassword() {
 
 
 // Add event listener to generate button -hw
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);//}
