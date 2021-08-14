@@ -51,6 +51,7 @@ var userData = userInput();
 var passResult = [];
 var passAllTypes = [];
 var guaranteedTypes = [];
+debugger;
 
 
 if (userData.useLowerCase){
@@ -83,13 +84,19 @@ console.log('passAllTypes', passAllTypes)
 console.log('guaranteedTypes', guaranteedTypes)
 }
 console.log(guaranteedTypes) 
+
 // for loop needs to check userData length to know the # of characters then need to place the for loop in this very function
 // need to a placeholder variable is going to = another getRandom of passAllTypes. Pass to passResult array
 // can CLog var placeholder inside loop
+
+for (let i = 0; i < length; i++){
+  var index = Math
 }
 
-// this is from the video bcs sent earlier (and I understand the math.floor and math.random definitions, just not how to use them with arrays)
+}
+
 // need to return back to where functions are being called
+//bcs tutor said someArray is a placeholder here and only used here to make the 'math' happen, it is not defined anywhere else
 function getRandom(someArray) {
 var randIndex = Math.floor(Math.random() * someArray.length);
 var randElement = someArray[randIndex]
@@ -99,9 +106,6 @@ return randElement
 //getrandomchar types from somearry (however many time user chose) 
 // forloop using your passLength
 
-// for (let i = 0; i < someArray.length; i++){
-  
-// }
   
 
 
