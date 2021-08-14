@@ -73,6 +73,8 @@ guaranteedTypes.push(getRandom(numsChars));
 }
 }
 
+
+// this is from the video bcs sent earlier (and I understand the math.floor and math.random definitions, just not how to use them with arrays)
 function getRandom() {
   Math.floor(Math.Random).toString().slice()
 }
