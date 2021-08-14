@@ -51,47 +51,59 @@ var passResult = [];
 var passAllTypes = [];
 var guaranteedTypes = [];
 
+
 if (userData.useLowerCase){
-  // .concat .push .getRandom
+  // .concat .push (getRandom)
 passAllTypes = passAllTypes.concat(alphLowerChars);
 guaranteedTypes.push(getRandom(alphLowerChars));
+console.log('passAllTypes', passAllTypes)
+console.log('guaranteedTypes', guaranteedTypes)
 }
 
 if (userData.useUpperCase){
 passAllTypes = passAllTypes.concat(alphUpperChars);
 guaranteedTypes.push(getRandom(alphUpperChars));
+console.log('passAllTypes', passAllTypes)
+console.log('guaranteedTypes', guaranteedTypes)
 }
 
 if (userData.useSpecials){
 passAllTypes = passAllTypes.concat(specChars);
 guaranteedTypes.push(getRandom(specChars));
+console.log('passAllTypes', passAllTypes)
+console.log('guaranteedTypes', guaranteedTypes)
 }
 
 if (userData.useNumbahs){
 passAllTypes = passAllTypes.concat(numsChars);
 guaranteedTypes.push(getRandom(numsChars));
+console.log('passAllTypes', passAllTypes)
+console.log('guaranteedTypes', guaranteedTypes)
 }
 }
 
 
 // this is from the video bcs sent earlier (and I understand the math.floor and math.random definitions, just not how to use them with arrays)
-function getRandom() {
-  Math.floor(Math.Random).toString().slice()
+// need to return back to where functions are being called
+function getRandom(someArray) {
+var randIndex = Math.floor(Math.random() * someArray.length);
+var randElement = someArray[randIndex]
+return randElement
 }
 
+//getrandomchar types from somearry (however many times) 
+// forloop using your passLength
 
-
-// var index = Math.floor(Math.random() * passChoices);
-// var userData = passChoices[index];
-
-  // //forloop using your passLength
-
-// }
+for (let i = 0; i < someArray.length; i++){
+  
+}
+  
 
 
 // given code - hw
 // This area allows for the code to show up in the 'box' by linking html id = 'password'
 function writePassword() {
+  console.log(passChoices)
   var passLength = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
