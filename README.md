@@ -21,7 +21,7 @@ Before:
 ![Screenshot](assets/images/screenshot.png)
 
 After:
-![Screenshot](assets/images/screenshot.png)
+![Screenshot](assets/images/screenshot2.png)
 
 
 ## Links
