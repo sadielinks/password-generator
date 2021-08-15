@@ -14,8 +14,6 @@ var getRandom;
 var passChoices;
 
 
-// userInput();--------------------
-
 // User will be asked the following prompts/alerts in order to start generating a password
 function userInput() {
   var passLength = prompt("Choose a password length of at least 8 characters and no more than 128 characters");
@@ -50,7 +48,7 @@ function generatePassword() {
 var userData = userInput();
 var passResult = [];
 var passAllTypes = [];
-var guaranteedTypes = [];
+// var guaranteedTypes = [];
 // debugger;
 
 
@@ -58,32 +56,32 @@ if (userData.useLowerCase){
   // .concat .push (getRandom)
   // delete the console.logs before
 passAllTypes = passAllTypes.concat(alphLowerChars);
-guaranteedTypes.push(getRandom(alphLowerChars));
+// guaranteedTypes.push(getRandom(alphLowerChars));
 console.log('passAllTypes', passAllTypes)
-console.log('guaranteedTypes', guaranteedTypes)
+// console.log('guaranteedTypes', guaranteedTypes)
 }
 
 if (userData.useUpperCase){
 passAllTypes = passAllTypes.concat(alphUpperChars);
-guaranteedTypes.push(getRandom(alphUpperChars));
+// guaranteedTypes.push(getRandom(alphUpperChars));
 console.log('passAllTypes', passAllTypes)
-console.log('guaranteedTypes', guaranteedTypes)
+// console.log('guaranteedTypes', guaranteedTypes)
 }
 
 if (userData.useSpecials){
 passAllTypes = passAllTypes.concat(specChars);
-guaranteedTypes.push(getRandom(specChars));
+// guaranteedTypes.push(getRandom(specChars));
 console.log('passAllTypes', passAllTypes)
-console.log('guaranteedTypes', guaranteedTypes)
+// console.log('guaranteedTypes', guaranteedTypes)
 }
 
 if (userData.useNumbahs){
 passAllTypes = passAllTypes.concat(numsChars);
-guaranteedTypes.push(getRandom(numsChars));
+// guaranteedTypes.push(getRandom(numsChars));
 console.log('passAllTypes', passAllTypes)
-console.log('guaranteedTypes', guaranteedTypes)
+// console.log('guaranteedTypes', guaranteedTypes)
 }
-console.log(guaranteedTypes) 
+// console.log(guaranteedTypes) 
 
 // for loop needs to check userData length to know the # of characters then need to place the for loop in this very function
 // need to a placeholder variable is going to = another getRandom of passAllTypes. Pass to passResult array
@@ -91,11 +89,11 @@ console.log(guaranteedTypes)
 
 let password = "";
 let character = "";
-for (let i =0; i < passLength; i++){
+for (let i =0; i < userData.passLength; i++){
 character = getRandom(passAllTypes)
 password = password + character
 } 
-
+return password
 // need to return back to where functions are being called
 //bcs tutor said someArray is a placeholder here and only used here to make the 'math' happen, it is not defined anywhere else
 function getRandom(someArray) {
@@ -106,16 +104,14 @@ return randElement
 
 //getrandomchar types from somearry (however many time user chose) 
 // forloop using your passLength
-// given code - hw
-// This area allows for the code to show up in the 'box' by linking html id = 'password'
-function writePassword() {
-  var passLength = generatePassword();
-  var password = document.querySelector("#password");
-  password.value = password;
-}
 
 
 
 // Add event listener to generate button -hw
-generateBtn.addEventListener("click", writePassword);
 }
+function writePassword() {
+    var newPassword = generatePassword();
+    var password = document.querySelector("#password");
+    password.value = newPassword;
+  }
+generateBtn.addEventListener("click", writePassword);
