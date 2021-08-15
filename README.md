@@ -26,6 +26,6 @@ After:
 
 ## Links
 
-[Deployed App](githubpages)
+[Deployed App](https://sadielinks.github.io/password-generator/)
 
 [GitHub Repository](https://github.com/sadielinks/password-generator)
